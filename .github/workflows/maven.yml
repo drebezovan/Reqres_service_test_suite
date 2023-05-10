@@ -8,13 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: '19'
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build and test with Maven
         run: mvn clean test
@@ -31,7 +27,7 @@ jobs:
 
       - name: Create a gh-pages branch containing allure report
         if: always()
-        uses: peaceiris/actions-gh-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
