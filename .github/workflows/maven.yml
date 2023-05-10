@@ -8,6 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+        java-version: '19'
+
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Build and test with Maven
         run: mvn clean test
