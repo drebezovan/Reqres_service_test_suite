@@ -28,7 +28,7 @@ jobs:
       - name: Create a gh-pages branch containing allure report
         if: always()
         uses: peaceiris/actions-gh-pages@v3
-        env:
+        with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
